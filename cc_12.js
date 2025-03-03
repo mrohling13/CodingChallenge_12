@@ -1,6 +1,6 @@
 // Task 1 
 const dashboardId = document.getElementById("dashboard"); // id
-const dashboardQuery = document. querySelector("dashboard"); // querySelector
+const dashboardQuery = document. querySelector("#dashboard"); // querySelector
 
 // creating div element
 
@@ -31,7 +31,7 @@ const metricCardsArray = [...metricCards];
 // updating each cards inner text
 metricCardsArray.forEach(card => {
   card.innerText += ' - Updated';
-  card.style.backgroundColor = 'orange'; // Adding a background color
+  card.style.backgroundColor = 'green'; // Adding a background color
 });
 
 
