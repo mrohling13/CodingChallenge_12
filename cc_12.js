@@ -69,4 +69,19 @@ document.getElementById("addProductButton").addEventListener("click", () => {
 addProductItem("Playstation 5");
 addProductItem("Nintendo DS");
 
+// Task 4: Business Customer Section – Handling Event Bubbling
 
+const customerSection = document.getElementById("customerSection");
+// adding a click event listner 
+customerSection.addEventListener("click", () => {
+    console.log("Has been selected");
+});
+
+const customerCards = document.querySelectorAll(".customer-card");
+customerCards.forEach((card) => {
+    card.style.backgroundColor = "blue";
+    card.addEventListener("click", (event) => {
+        console.log("Has been selected");
+        event.stopPropagation();
+    });
+});
