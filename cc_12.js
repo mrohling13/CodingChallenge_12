@@ -35,3 +35,38 @@ metricCardsArray.forEach(card => {
 });
 
 
+// Task 3: Dynamic Inventory Management – Adding and Removing Items
+
+function addProductItem(productName) {
+    const inventoryList = document.getElementById("inventoryList");
+    const newProductItem = document.createElement("li");
+
+    newProductItem.setAttribute("class", "product-item");
+    newProductItem.setAttribute("data-product", productName);
+    newProductItem.innerText = productName;
+
+    // adding a click event that removes items 
+    newProductItem.addEventListener("click", () => {
+        removeProductItem(newProductItem);
+    });
+
+    inventoryList.appendChild(newProductItem);
+};
+
+// function for removing product items
+
+function removeProductItem(item) {
+    const inventoryList = document.getElementById("inventoryList");
+    inventoryList.removeChild(item);
+};
+
+// adding a event listener to the "add product" button
+document.getElementById("addProductButton").addEventListener("click", () => {
+    addProductItem("New Product");
+})
+
+// adding products as examples
+addProductItem("Playstation 5");
+addProductItem("Nintendo DS");
+
+
